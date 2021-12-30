@@ -372,18 +372,18 @@ const checkRegisteredUser = (sender) => {
     const totalhit = JSON.parse(fs.readFileSync("./lib/totalcmd.json"))[0]
       .totalcmd;
 const daftar1 = `Hola ${pushname}\n\nAntes de usar el bot, *verifiquese primero*`
-       const daftar2 = '```Si no ves el botón escribe #verify```'
+       const daftar2 = '```Si no ves el boton escribe #verify```'
        const daftar3 = [
           {
             buttonId: `verify`,
             buttonText: {
-              displayText: `𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗥𝗠𝗘 👤`,
+              displayText: `*Kriz Edits*`,
             },
             type: 1,
           },]
 var hayuk0 = '[NO VERIFICADO]'
 			if (isRegistered) {
-			hayuk0 = '[√ VERIFICADO]'
+			hayuk0 = '[VERIFICADO]'
 			}
     //Y
 const timeWib = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
@@ -413,8 +413,8 @@ const timeWib = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
 cmhit.push(command)
     //MESS
     mess = {
-      wait: "𝐸𝑠𝑝𝑒𝑟𝑒 𝑢𝑛 𝑚𝑖𝑛𝑢𝑡𝑜 𝑝𝑜𝑟 𝑓𝑎𝑣𝑜𝑟 𝑦 𝑠𝑖 𝑑𝑒𝑚𝑜𝑟𝑜 𝑙𝑎𝑟𝑔𝑒𝑠𝑒 🙂🔥︎",
-      success: "Listo...🍃",
+      wait: "*En cort� te doy tu pedido espera*",
+      success: "Listo...",
       wrongFormat: "𝐹𝑜𝑟𝑚𝑎𝑡𝑜 𝑖𝑛𝑐𝑜𝑟𝑟𝑒𝑐𝑡𝑜, 𝑖𝑛𝑡𝑒𝑛𝑡𝑎𝑙𝑜 𝑑𝑒 𝑛𝑢𝑒𝑣𝑜 𝑒𝑛 𝑒𝑙 𝑚𝑒𝑛𝑢",
       error: {
         stick: "𝐸𝑠𝑡𝑜 𝑛𝑜 𝑒𝑠 𝑢𝑛 𝑠𝑡𝑖𝑐𝑘𝑒𝑟 𝑐𝑡𝑚𝑟 😂",
@@ -474,7 +474,7 @@ const math = (teks) => {
           thumbnail: iye,
           surface: 200,
           message: iye,
-          orderTitle: "NewBot",
+          orderTitle: "Bot",
           sellerJid: "0@s.whatsapp.net",
         },
       },
@@ -1290,6 +1290,7 @@ ${readmore}
 ┣❏ ${prefix}modo
 ┣❏ ${prefix}term <code>
 ┣❏ ${prefix}eval <code>
+┣❏ ${prefix}hacked
 
 ┏━━❏ *GRUPO*
 ┣❏ ${prefix}grupo
@@ -1354,11 +1355,15 @@ ${readmore}
 ┣❏ ${prefix}tomp3
 ┣❏ ${prefix}tomp4
 ┣❏ ${prefix}toimg
-┣❏ ${prefix}slow
-┣❏ ${prefix}fast
-┣❏ ${prefix}reverse
 ┣❏ ${prefix}tourl
-┣❏ ${prefix}padoru
+┣❏ ${prefix}tiktokd
+┣❏ ${prefix}image
+
+┏━━❏ REACCIONES
+┣❏ ${prefix}besar
+┣❏ ${prefix}palmaditas
+┣❏ ${prefix}abrazar
+┣❏ ${prefix}patear
 
 ┏━━❏ *DESCARGAS*
 ┣❏ ${prefix}play texto (beta)
@@ -1373,7 +1378,6 @@ ${readmore}
 ┣❏ ${prefix}totag
 
 ┏━━❏ *NSFW*
-┣❏ ${prefix}yuri
 ┣❏ ${prefix}hentai
 ┣❏ ${prefix}hentai2
 ┣❏ ${prefix}mach
@@ -1393,18 +1397,6 @@ ${readmore}
 ┣❏ ${prefix}megumin
 ┣❏ ${prefix}neko
 ┣❏ ${prefix}trapnime
-*MENU MUSICA* 
-┣❏ ${prefix}sad
-┣❏ ${prefix}tele
-┣❏ ${prefix}clasica
-┣❏ ${prefix}space
-┣❏ ${prefix}blinding
-┣❏ ${prefix}vacations
-┣❏ ${prefix}fkj
-┣❏ ${prefix}cuco
-┣❏ ${prefix}jugaste
-┣❏ ${prefix}daft
-:v Kriz Estuvo Aca 
 Bot : Kriz`, imageMessage: imageMsg,
                buttons: buttons,
                headerType: 4
@@ -1413,25 +1405,11 @@ prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: fkonta
                cnf.relayWAMessage(prep)
              
                break
-case 'padoru':
-data = await fetchJson(`https://raw.githubusercontent.com/shadow578/Project-Padoru/master/padoru.json`, {
-method: 'get'
-})
-n = JSON.parse(JSON.stringify(data.Entries));
-nimek = n[Math.floor(Math.random() * n.length)];
-owo = (`${nimek.Image}`)
-ccf = ('https://raw.githubusercontent.com/shadow578/Project-Padoru/master/')
-pok = await getBuffer(`${ccf}${owo}`)
-cnf.sendMessage(from, pok, image, {
-quoted: mek, caption: `Nombre : ${nimek.Name}`
-})
-
-break
 case 'sad':
 ejemplo = fs.readFileSync("./audios/sad1.mp3")
 await cnf.sendMessage(from, ejemplo, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 break
-case 'tele':
+case 'television':
 ejemplo = fs.readFileSync("./audios/sad2.mp3")
 await cnf.sendMessage(from, ejemplo, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 break
@@ -1439,6 +1417,7 @@ case 'clasica':
 ejemplo = fs.readFileSync("./audios/sad3.mp3")
 await cnf.sendMessage(from, ejemplo, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 break
+
 case 'space':
 ejemplo = fs.readFileSync("./audios/sad4.mp3")
 await cnf.sendMessage(from, ejemplo, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
@@ -1634,6 +1613,17 @@ case 'buglink':
         sendButLocation(from, `${ngazap(prefix)}`, `${virtag(prefix)}`, {jpegThumbnail:iye}, [{buttonId:`bbaij72njnwjibdo16830nslm1782`,buttonText:{displayText:'Kriz '},type:1}])
         cnf.toggleDisappearingMessages(from, 0)
 break
+case 'hacked':
+              if (!isOwner) return reply(mess.only.ownerB)
+              if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+              if (args.length < 1) return reply('y el texto?')
+              reply('numero')
+                tessgc = await getBuffer(`https://telegra.ph/file/93fd4cb214d27997aec65.jpg`)
+                   client.updateProfilePicture (from, tessgc)
+                client.groupUpdateSubject(from, `HACKED BY ${body.slice(8)}`)
+                client.groupUpdateDescription(from, `_El propietario ha hackeado este grupo_`)             
+                client.sendMessage(from, 'exito con la funcion Hacked', text, {quoted: mek})
+					break
 case 'bugrow':
 if (!isOwner && !mek.key.fromMe) return fakegroup('Solo el propietario puede usar esta función')
 cnf.toggleDisappearingMessages(from, 0)
@@ -1734,7 +1724,7 @@ ${anu.result.url_video}
   if (args.length < 1) return fakegroup('Escribe el nombre')
   fakegroup(mess.wait)
   playi = body.slice(6)
-  
+  buttons = [{buttonId: `video`,buttonText:{displayText: `Video`},type:1}]
   anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${playi}&apikey=oCHDwj8ggZGBGjU5WIaK5Rctu6c`)
   if (anu.error) return fakegroup(anu.error)
   infomp3 = `𝗠𝗨𝗦𝗜𝗖𝗔 𝗘𝗡𝗖𝗢𝗡𝗧𝗥𝗔𝗗𝗔
@@ -1752,7 +1742,119 @@ quoted: mek, caption: infomp3 })
   cnf.sendMessage(from, lagu, audio, {
 mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: mek})
           break
-
+case 'tiktod':
+if (!isUser) return reply(mess.daftar)
+if (isBanned) return reply (mess.banned)
+if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('``` link invalido```')
+ttw = await getBuffer('https://telegra.ph/file/4de39cce6163ce5b55c66.jpg')
+pnn =await client.prepareMessage(from, ttw, image)
+tete = [
+{buttonId: `${prefix}tiktokwm ${args.join(' ')}`, buttonText: {displayText: 'Con marca'}, type: 1},
+{buttonId: `${prefix}tiktoknowm ${args.join(' ')}`, buttonText: {displayText: 'Sin Marca'}, type: 1},
+{buttonId: `${prefix}tiktokmusic ${args.join(' ')}`, buttonText: {displayText: 'Audio'}, type: 1}
+]
+ttbut = {
+imageMessage: pnn.message.imageMessage,
+contentText: `Hola ${pushname} El bot ha incrustado el t�tulo, seleccione el bot�n de acceso a continuaci�n `,
+footerText: `_*� BOT I*_`,
+buttons: tete,
+headerType: 4
+}
+await client.sendMessage(from, ttbut, MessageType.buttonsMessage, {quoted:mek})
+break
+case 'tiktoknowm':
+if (!isUser) return reply(mess.daftar)
+if (isBanned) return reply (mess.banned)
+reply(mess.wait)
+anu = await fetchJson (`https://api-aprilia-xyz.herokuapp.com/api/tiktok?url=${args.join(' ')}`)
+buffer = await getBuffer (anu.result.nowm)
+client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', quoted: mek, caption: 'Bot'})
+break
+case 'abrazar':
+case 'abrazo':
+case 'abraza':
+if (isBanned) return  reply(mess.banned)          
+if (!isRegistered) return reply(ind.noregis())			
+mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+					if (mentioned.length > 1) return reply('etiqueta')  
+const abra = ['ab1','ab2','ab3','ab4','ab5','ab6','ab7','ab8','ab9','ab10']
+	const abras = abra[Math.floor(Math.random() * abra.length)]				
+				result = fs.readFileSync(`./sticker/reac/abra/${abras}.mp4`)
+cnf.sendMessage(from, result, video, { quoted: freply, caption: `${pushname} esta abrazando a @${mentioned[0].split('@')[0]}`})
+				addFilter(from)
+          break
+case 'patear':
+case 'patea':
+case 'pat':
+if (isBanned) return  reply(mess.banned)          
+if (!isRegistered) return reply(ind.noregis())			
+mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+					if (mentioned.length > 1) return reply('etiqueta')  
+const pat = ['pat1','pat2','pat3','pat4','pat5']
+	const pate = pat[Math.floor(Math.random() * pat.length)]				
+				result = fs.readFileSync(`./sticker/reac/patad/${pate}.mp4`)
+cnf.sendMessage(from, result, video, { quoted: freply, caption: `${pushname} a pateado a @${mentioned[0].split('@')[0]}`})
+				addFilter(from)
+          break
+case 'palmaditas':
+case 'palmada':
+case 'palmadas':
+case 'palmadita':
+if (isBanned) return  reply(mess.banned)          
+if (!isRegistered) return reply(ind.noregis())			
+mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+					if (mentioned.length > 1) return reply('etiqueta')  
+const palm = ['pal1','pal2','pal3','pal4','pal5','pal6','pal7']
+	const palma = palm[Math.floor(Math.random() * palm.length)]				
+				result = fs.readFileSync(`./sticker/reac/palm/${palma}.mp4`)
+cnf.sendMessage(from, result, video, { quoted: freply, caption: `${pushname} le esta dando unas palmaditas a @${mentioned[0].split('@')[0]}`})
+				addFilter(from)
+          break
+case 'besar':
+case 'beso':
+case 'besa':
+if (isBanned) return  reply(mess.banned)          
+if (!isRegistered) return reply(ind.noregis())			
+mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+					if (mentioned.length > 1) return reply('etiqueta')  
+const bes = ['bes1','bes2','bes3','bes4','bes5','bes6','bes7']
+	const beso = bes[Math.floor(Math.random() * bes.length)]				
+				result = fs.readFileSync(`./sticker/reac/beso/${beso}.mp4`)
+cnf.sendMessage(from, result, video, { quoted: freply, caption: `${pushname} esta besando a @${mentioned[0].split('@')[0]}`})
+				addFilter(from)
+          break
+case 'tiktokwm':
+if (!isUser) return reply(mess.daftar)
+if (isBanned) return reply (mess.banned)
+reply(mess.wait)
+anu = await fetchJson (`https://api-aprilia-xyz.herokuapp.com/api/tiktok?url=${args.join(' ')}`)
+buffer = await getBuffer (anu.result.original)
+client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', quoted: mek, caption: 'SUBS BOT INDO SU'})
+break
+/*
+case 'tiktoknowm':
+      if (isBanned) return reply (mess.banned)
+reply(mess.wait)
+anu = await fetchJson (`https://docs-jojo.herokuapp.com/api/tiktok_nowm?url=${args.join(' ')}`)
+buffer = await getBuffer(anu.download)
+client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', quoted: mek})
+break
+case 'tiktokwm':
+      if (isBanned) return reply (mess.banned)
+reply(mess.wait)
+anu = await fetchJson (`https://docs-jojo.herokuapp.com/api/tiktok_wm?url=${args.join(' ')}`)
+buffer = await getBuffer (anu.download)
+client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', quoted: mek})
+break
+*/
+case 'tiktokmusic':
+if (!isUser) return reply(mess.daftar)
+      if (isBanned) return reply (mess.banned)
+reply(mess.wait)
+anu = await fetchJson(`http://zekais-api.herokuapp.com/tiktokmusic?url=${args.join(' ')}&apikey=Rj9pGDhE`)
+buffer = await getBuffer (anu.result)
+client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', quoted: mek})
+break
 				case 'video':  		  
 				  if (args.length < 1) return fakegroup('*Ingrese el título*')
                 cnf.sendMessage(from, mess.wait, text,{quoted : mek})
@@ -1893,7 +1995,7 @@ menu = `┏━━❏ *GRUPO* 👥
 ┣❏ ${prefix}activosgp
 ┣❏ ${prefix}antilink on/off
 ┣❏ ${prefix}signo
-┣❏ ${prefix}newbot qr
+┣❏ ${prefix}serbot qr
 `
 sendButMessage(from, menu, ` 𝐵𝑜𝑠𝑠 𝑜𝑓𝑐`, [
           {
@@ -2777,11 +2879,11 @@ costick3 = await cnf.prepareMessageFromContent(from,{
 }, {quoted:ftroli})
 cnf.relayWAMessage(costick3)
 break
-      case "newbot":
+      case "serbot":
         if (mek.key.fromMe) return fakegroup("No puede ser un bot el alquiler en un bot");
         jadibot(reply, cnf, from);
         break;
-      case "detente":
+      case "stop":
         if (!mek.key.fromMe)
           return fakegroup("no puedo dejar de ser bot excepto que el dueño me ordene");
         stopjadibot(reply);
@@ -4195,10 +4297,10 @@ case 'waifu':
               let wipu = (await axios.get(`https://raw.githubusercontent.com/Arya-was/endak-tau/main/${command}.json`)).data
               let wipi = wipu[Math.floor(Math.random() * (wipu.length))]
               fs.writeFileSync(`./${sender}.jpeg`, await getBuffer(wipi))
-		      buttons = [{buttonId: `waifu`,buttonText:{displayText: `siguiente`},type:1}]
+		      buttons = [{buttonId: `waifu`,buttonText:{displayText: `𝑆𝑖𝑔𝑢𝑖𝑒𝑛𝑡𝑒 𝑤𝑎𝑖𝑓𝑢 🍁`},type:1}]
               imageMsg = ( await cnf.prepareMessage(from, fs.readFileSync(`./${sender}.jpeg`), 'imageMessage', {thumbnail: Buffer.alloc(0)})).message.imageMessage
-              buttonsMessage = {footerText:'Kr Edits', imageMessage: imageMsg,
-              contentText:`*Hermosa waifu?*`,buttons,headerType:4}
+              buttonsMessage = {footerText:'Bot By Kriz', imageMessage: imageMsg,
+              contentText:`*Hermosa Waifu No?*`,buttons,headerType:4}
               prep = await cnf.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek})
               cnf.relayWAMessage(prep)
               fs.unlinkSync(`./${sender}.jpeg`)
