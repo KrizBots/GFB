@@ -92,7 +92,7 @@ const dare = JSON.parse(fs.readFileSync('./database/dare.json'))
 //IMAGENES //
 const iye = fs.readFileSync('./stik/thumb.jpeg')
 const asw1 = 'https://i.ibb.co/R6jkZmH/fg1.jpg'
-const sip = fs.readFileSync('./stik/oksip.jpeg')
+const sip = fs.readFileSync('./stik/oksip.jpg')
 const bgg = fs.readFileSync('./stik/fake.jpeg')
 //// IMAGEN ///
 const time2 = moment().tz("Asia/Jakarta").format("HH:mm:ss");
@@ -1248,7 +1248,7 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
                {buttonId:`infogrupo`,buttonText:{displayText:'INFO GP'},type:1}]
 
 
-               imageMsg = (await cnf.prepareMessageMedia(fs.readFileSync(`./stik/oksip.jpeg`), 'imageMessage', {thumbnail: fs.readFileSync(`./stik/oksip.jpeg`)})).imageMessage
+               imageMsg = (await cnf.prepareMessageMedia(fs.readFileSync(`./stik/oksip.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./stik/oksip.jpg`)})).imageMessage
 
                buttonsMessage = {
                contentText: `${txtt}`,
@@ -1724,8 +1724,8 @@ ${anu.result.url_video}
   if (args.length < 1) return fakegroup('Escribe el nombre')
   fakegroup(mess.wait)
   playi = body.slice(6)
-  buttons = [{buttonId: `video`,buttonText:{displayText: `Video`},type:1}]
   anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${playi}&apikey=oCHDwj8ggZGBGjU5WIaK5Rctu6c`)
+  buttons = [{buttonId: `video`,buttonText:{displayText: `Video`},type:1}]
   if (anu.error) return fakegroup(anu.error)
   infomp3 = `𝗠𝗨𝗦𝗜𝗖𝗔 𝗘𝗡𝗖𝗢𝗡𝗧𝗥𝗔𝗗𝗔
 
@@ -1743,8 +1743,6 @@ quoted: mek, caption: infomp3 })
 mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: mek})
           break
 case 'tiktod':
-if (!isUser) return reply(mess.daftar)
-if (isBanned) return reply (mess.banned)
 if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('``` link invalido```')
 ttw = await getBuffer('https://telegra.ph/file/4de39cce6163ce5b55c66.jpg')
 pnn =await client.prepareMessage(from, ttw, image)
@@ -1763,7 +1761,6 @@ headerType: 4
 await client.sendMessage(from, ttbut, MessageType.buttonsMessage, {quoted:mek})
 break
 case 'tiktoknowm':
-if (!isUser) return reply(mess.daftar)
 if (isBanned) return reply (mess.banned)
 reply(mess.wait)
 anu = await fetchJson (`https://api-aprilia-xyz.herokuapp.com/api/tiktok?url=${args.join(' ')}`)
@@ -1772,8 +1769,7 @@ client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', quoted: mek, cap
 break
 case 'abrazar':
 case 'abrazo':
-case 'abraza':
-if (isBanned) return  reply(mess.banned)          
+case 'abraza':       
 if (!isRegistered) return reply(ind.noregis())			
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) return reply('etiqueta')  
@@ -1786,7 +1782,6 @@ cnf.sendMessage(from, result, video, { quoted: freply, caption: `${pushname} est
 case 'patear':
 case 'patea':
 case 'pat':
-if (isBanned) return  reply(mess.banned)          
 if (!isRegistered) return reply(ind.noregis())			
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) return reply('etiqueta')  
@@ -1800,7 +1795,6 @@ case 'palmaditas':
 case 'palmada':
 case 'palmadas':
 case 'palmadita':
-if (isBanned) return  reply(mess.banned)          
 if (!isRegistered) return reply(ind.noregis())			
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) return reply('etiqueta')  
@@ -1813,7 +1807,6 @@ cnf.sendMessage(from, result, video, { quoted: freply, caption: `${pushname} le 
 case 'besar':
 case 'beso':
 case 'besa':
-if (isBanned) return  reply(mess.banned)          
 if (!isRegistered) return reply(ind.noregis())			
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) return reply('etiqueta')  
@@ -1824,32 +1817,26 @@ cnf.sendMessage(from, result, video, { quoted: freply, caption: `${pushname} est
 				addFilter(from)
           break
 case 'tiktokwm':
-if (!isUser) return reply(mess.daftar)
-if (isBanned) return reply (mess.banned)
 reply(mess.wait)
 anu = await fetchJson (`https://api-aprilia-xyz.herokuapp.com/api/tiktok?url=${args.join(' ')}`)
 buffer = await getBuffer (anu.result.original)
 client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', quoted: mek, caption: 'SUBS BOT INDO SU'})
 break
-/*
+
 case 'tiktoknowm':
-      if (isBanned) return reply (mess.banned)
 reply(mess.wait)
 anu = await fetchJson (`https://docs-jojo.herokuapp.com/api/tiktok_nowm?url=${args.join(' ')}`)
 buffer = await getBuffer(anu.download)
 client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', quoted: mek})
 break
 case 'tiktokwm':
-      if (isBanned) return reply (mess.banned)
 reply(mess.wait)
 anu = await fetchJson (`https://docs-jojo.herokuapp.com/api/tiktok_wm?url=${args.join(' ')}`)
 buffer = await getBuffer (anu.download)
 client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', quoted: mek})
 break
-*/
+
 case 'tiktokmusic':
-if (!isUser) return reply(mess.daftar)
-      if (isBanned) return reply (mess.banned)
 reply(mess.wait)
 anu = await fetchJson(`http://zekais-api.herokuapp.com/tiktokmusic?url=${args.join(' ')}&apikey=Rj9pGDhE`)
 buffer = await getBuffer (anu.result)
